@@ -1,18 +1,25 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using Xiecheng.API.Services;
+using Xiecheng.API.Database;
+
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Xiecheng.API
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }//要用Appsetting中的配置 要用这个
+
+        public Startup(IConfiguration configuration) //依赖注入configuration
+        {
+            Configuration = configuration;
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
 
@@ -22,7 +29,13 @@ namespace Xiecheng.API
         public void ConfigureServices(IServiceCollection services)//这里注入服务
         {
             services.AddControllers();//MVC Controller功能启用
-            services.AddTransient<ITouristRouteRepository, MockTouristRouteRepository>();
+            services.AddTransient<ITouristRouteRepository, TouristRouteRepository>();
+            
+            //注入DbContext 同时连接真正的数据库
+            services.AddDbContext<AppDbContext>(option => {
+                option.UseSqlServer(Configuration["DbContext:ConnectionString"]);
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
