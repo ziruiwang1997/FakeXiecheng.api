@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Xiecheng.API.Services;
 
 namespace Xiecheng.API
 {
@@ -14,9 +15,14 @@ namespace Xiecheng.API
     {
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+
+        //services.AddTransient: 每一次请求的时候创建一个新的数据仓库 结束以后注销 
+        //services.AddSingleton：只有一个仓库 
+        //services.AddScoped：介于两者之间
         public void ConfigureServices(IServiceCollection services)//这里注入服务
         {
             services.AddControllers();//MVC Controller功能启用
+            services.AddTransient<ITouristRouteRepository, MockTouristRouteRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
