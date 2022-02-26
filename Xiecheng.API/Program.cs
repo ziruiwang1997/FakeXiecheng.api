@@ -13,14 +13,14 @@ namespace Xiecheng.API
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            CreateHostBuilder(args).Build().Run();//创建虚拟托管服务器
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+            Host.CreateDefaultBuilder(args) //查看运行环境 启动配置文件 加载assembly 设置di等环境
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>(); //DI 中间件 配置请求都在startup里操作
                 });
     }
 }
