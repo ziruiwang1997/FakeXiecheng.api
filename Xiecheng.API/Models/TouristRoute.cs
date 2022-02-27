@@ -21,7 +21,7 @@ namespace Xiecheng.API.Models
         [MaxLength(1500)]
         public string Description { get; set; }
 
-        [Column(TypeName ="decimal(18, 2")]
+        [Column(TypeName ="decimal(18, 2")] //用来表示这一列都受到限制
         public decimal OriginalPrice { get; set; }
 
         [Range(0.0, 1.0)]

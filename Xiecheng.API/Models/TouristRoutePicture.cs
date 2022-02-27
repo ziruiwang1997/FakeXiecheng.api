@@ -8,7 +8,7 @@ namespace Xiecheng.API.Models
     public class TouristRoutePicture
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]//这个字段是自增的
         public int Id { get; set; }//picture自己的id 主键
 
         [MaxLength(100)]
