@@ -47,5 +47,9 @@ namespace Xiecheng.API.Models
         public ICollection<TouristRoutePicture> TouristRoutePictures { get; set; }
             = new List<TouristRoutePicture>();//一对多 可以有多个照片模型 初始化一个数组 更加健壮
 
+        public double? Rating { get; set; }
+        public TravelDays? TravelDays { get; set; }
+        public TripType? TripType { get; set; }
+        public DepartureCity? DepartureCity { get; set; }
     }
 }
