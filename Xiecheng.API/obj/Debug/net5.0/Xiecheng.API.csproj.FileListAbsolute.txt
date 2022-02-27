@@ -53,3 +53,5 @@ C:\Users\zirui\Desktop\工程纪要\Xiecheng.api\Xiecheng.API\Xiecheng.API\bin\D
 C:\Users\zirui\Desktop\工程纪要\Xiecheng.api\Xiecheng.API\Xiecheng.API\obj\Debug\net5.0\Xiecheng.API.csproj.CopyComplete
 C:\Users\zirui\Desktop\工程纪要\Xiecheng.api\Xiecheng.API\Xiecheng.API\bin\Debug\net5.0\Humanizer.dll
 C:\Users\zirui\Desktop\工程纪要\Xiecheng.api\Xiecheng.API\Xiecheng.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\zirui\Desktop\工程纪要\Xiecheng.api\Xiecheng.API\Xiecheng.API\bin\Debug\net5.0\Database\touristRoutePicturesMockData.json
+C:\Users\zirui\Desktop\工程纪要\Xiecheng.api\Xiecheng.API\Xiecheng.API\bin\Debug\net5.0\Database\touristRoutesMockData.json
